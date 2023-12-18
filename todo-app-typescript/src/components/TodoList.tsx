@@ -1,18 +1,20 @@
 import React from 'react';
-import SingleTodo from './SingleTodo'
+import SingleTodo from './SingleTodo';
+
 interface Todo{
-    todo:string,
     todos:string[],
+    todo:string,
+    setTodo:React.Dispatch<React.SetStateAction<string>>,
     setTodos:React.Dispatch<React.SetStateAction<string[]>>
 }
-const handleDelete=(e:React.FormEvent)=>{
-    
-}
-const TodoList = ({todo,todos,setTodos}:Todo) => {
+
+const TodoList = ({todos,setTodos,setTodo,todo}:Todo) => {
+ 
   return (
-    <div>
-      <li>{todo}</li>
-      <button onClick={(e)=>handleDelete(e)}>delete</button>
+    <div className='tasksList'>
+      <h2 className='TaskHeading'>Task-List</h2>
+      { todos.map((todo)=><SingleTodo todo={todo} setTodo={setTodo} todos={todos} setTodos={setTodos}/>)}
+      
       
     </div>
   )

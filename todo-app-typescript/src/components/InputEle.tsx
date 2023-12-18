@@ -1,19 +1,21 @@
-import React, {useState,useReducer} from 'react'
+import React from 'react'
 import './styles.css';
-import TodoList from './TodoList';
-export interface Todo{
-    todo?:string;
-    todos?:string[]
+interface Props{
+  todo:string,
+  setTodo:React.Dispatch<React.SetStateAction<string>>,
+  todos:string[],
+  setTodos: React.Dispatch<React.SetStateAction<string[]>>
+
 }
 
-const InputEle:React.FC = () => {
-    const [todo,setTodo] = useState<string>("")
-    const [todos,setTodos] = useState<string[]>([])
+const InputEle = ({todo,setTodo,todos,setTodos}:Props) => {
+    
     const handleSubmit=(e:React.FormEvent)=>{
         e.preventDefault()
+        console.log(todo)
         setTodos([...todos,todo])
         setTodo("")
-        console.log(todo)
+
     }
   return (<>
     <form className='input' onSubmit={(e)=>handleSubmit(e)}>

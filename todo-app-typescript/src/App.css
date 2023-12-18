@@ -11,6 +11,42 @@
   text-transform: capitalize;
 }
 *{
+
   margin: 0px;
   padding: 0px;
+}
+li{
+  list-style: none;
+}
+.tasksList{
+  width: 250px;
+
+  margin-top: 20px;
+  box-shadow: 1px 1px 15px black;
+}
+.TaskHeading{
+  color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+.TodosList-div{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color:tomato;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+
+}
+
+button{
+  padding: 3px;
+  border: none;
+  margin:2px ;
+  border-radius: 5px;
+  background-color: #2f74c0;
+  color: white;
+  cursor: pointer;
 }
